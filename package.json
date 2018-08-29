@@ -1,0 +1,45 @@
+{
+  "name": "react-basic-scroll",
+  "version": "0.0.1",
+  "description": "React wrapper component for basicScroll",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack -w",
+    "build": "webpack",
+    "playground": "webpack-dev-server --config playground/webpack.config.js --hot --inline",
+    "playground-release": "webpack --config playground/webpack.config.js --inline && node playground/publish.js"
+  },
+  "dependencies": {
+    "basicscroll": "^2.1.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-prismjs": "^1.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "gh-pages": "^1.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prismjs": "^1.15.0",
+    "react-dat-gui": "^1.0.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.22.1",
+    "styled-components": "^3.4.2",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
