@@ -1,15 +1,14 @@
-#React-Basic-Scroll  
-
+# React-Basic-Scroll
 A ReactJS components for basicScroll
 
 [basicscroll.electerious.com](https://basicscroll.electerious.com/)
 
-##Installation
+## Installation
 ```$xslt
 yarn add react-basic-scroll
 ```
 
-##Basic Usage
+## Basic Usage
 ```$xslt
 import * as React from "react";
 import {ReactBasicScroll} from "react-basic-scroll";
@@ -34,6 +33,6 @@ export const App extends React.Component {
 }
 ```
 
-###Props
-#####config
+### Props
+##### config
 An object defines the configuration for then element, [see here](https://github.com/electerious/basicScroll#data)
