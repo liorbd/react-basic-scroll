@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava -v",
+    "test": "jest",
     "test:dev": "jest --watch",
     "dev": "webpack -w",
     "build": "webpack",
