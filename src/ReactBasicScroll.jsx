@@ -45,25 +45,25 @@ export class ReactBasicScroll extends React.Component {
 
     componentDidMount() {
         const config = this.props.config;
-        this.instance = basicScroll.create({
+            this.basicScrollInstance = basicScroll.create({
             elem: this.elementRef,
             ...config
         });
-        this.instanceFn('start');
+        this.basicScrollInstanceFn('start');
     };
 
     render() {
         const {children} = this.props;
-        return React.cloneElement(children, {innerRef: this.setInstanceRef});
+        return React.cloneElement(children, {ref: this.setInstanceRef});
     };
 
     componentWillUnmount() {
-        this.instanceFn('destroy');
+        this.basicScrollInstanceFn('destroy');
     };
 
-    instanceFn(fn){
-        if (this.instance && typeof (this.instance[fn]) == 'function') {
-            return this.instance[fn].call(null);
+    basicScrollInstanceFn(fn){
+        if (this.basicScrollInstance && typeof (this.basicScrollInstance[fn]) == 'function') {
+            return this.basicScrollInstance[fn].call(null);
         }
     };
 
@@ -73,30 +73,30 @@ export class ReactBasicScroll extends React.Component {
 
     // Instance API
     start = () => {
-        this.instanceFn('start');
+        this.basicScrollInstanceFn('start');
     };
 
     stop = () => {
-        this.instanceFn('stop');
+        this.basicScrollInstanceFn('stop');
     };
 
     destroy = () => {
-        this.instanceFn('destroy');
+        this.basicScrollInstanceFn('destroy');
     };
 
     update = () => {
-        return this.instanceFn('update');
+        return this.basicScrollInstanceFn('update');
     };
 
     calculate = () => {
-        this.instanceFn('calculate');
+        this.basicScrollInstanceFn('calculate');
     };
 
     isActive = () => {
-        return this.instanceFn('isActive');
+        return this.basicScrollInstanceFn('isActive');
     };
 
     getData = () => {
-        return this.instanceFn('getData');
+        return this.basicScrollInstanceFn('getData');
     };
 }
