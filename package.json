@@ -1,6 +1,6 @@
 {
   "name": "react-basic-scroll",
-  "version": "0.0.2",
+  "version": "0.0.3-0",
   "description": "React wrapper component for basicScroll",
   "main": "dist/index.js",
   "homepage": "https://github.com/liorbd/react-basic-scroll",
