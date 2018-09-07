@@ -4,12 +4,12 @@ A ReactJS components for basicScroll
 [basicscroll.electerious.com](https://basicscroll.electerious.com/)
 
 ## Installation
-```$xslt
+```
 yarn add react-basic-scroll
 ```
 
 ## Basic Usage
-```$xslt
+```js
 import * as React from "react";
 import {ReactBasicScroll} from "react-basic-scroll";
 export const App extends React.Component {
@@ -34,5 +34,5 @@ export const App extends React.Component {
 ```
 
 ### Props
-##### config
-An object defines the configuration for then element, [see here](https://github.com/electerious/basicScroll#data)
+#### config
+An object defines the configuration for then element, [see here](https://github.com/electerious/basicScroll#data).
