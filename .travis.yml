@@ -2,12 +2,19 @@ sudo: false
 language: node_js
 node_js:
   - stable
-before_script:
-  - yarn build
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  on:
-    branch: master
-  skip_cleanup: true
+jobs:
+  include:
+    - stage: npm release
+      if: tag IS present
+      script:
+        - yarn lint
+        - yarn build
+        - yarn test
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        skip_cleanup: true
+        on:
+          branch: master
+          tags: true

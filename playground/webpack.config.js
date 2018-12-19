@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
     template: path.resolve(__dirname, "./index.html"),
@@ -17,7 +17,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js','.jsx']
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -25,7 +25,10 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "babel-loader",
+                    options: {
+                        babelrc: path.resolve(__dirname, '../.babelrc')
+                    }
                 },
             },
             {
@@ -35,7 +38,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
@@ -46,5 +49,6 @@ module.exports = {
         port: 3000,
         contentBase: path.join(__dirname, './playground/dist'),
     },
-    plugins: [htmlPlugin]
+    plugins: [new CleanWebpackPlugin(['dist']),
+        htmlPlugin]
 };

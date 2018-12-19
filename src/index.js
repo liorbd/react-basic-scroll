@@ -1,1 +1,1 @@
-export * from "./ReactBasicScroll";
+export { ReactBasicScroll } from './ReactBasicScroll';

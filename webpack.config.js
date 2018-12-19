@@ -1,5 +1,6 @@
-const path = require("path");
+const path = require('path');
 const wne = require('webpack-node-externals');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
@@ -7,29 +8,27 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         library: 'ReactBasicScroll',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
     },
     mode: 'production',
     externals: [wne()],
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js','.jsx']
+        extensions: ['.js', '.jsx'],
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /(\.js|\.jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                },
+                use: ['babel-loader'],
             },
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.js$/,
-                loader: "source-map-loader"
+                loader: 'source-map-loader',
             },
-        ]
+        ],
     },
-    // plugins: [htmlPlugin]
+    plugins: [new CleanWebpackPlugin(['dist']),]
 };

@@ -10,13 +10,14 @@ const AppSection = styled.section`
   padding: 32px 0;
   &:last-of-type {
     border-bottom: 0;
+    padding-bottom: 400px;
   };
   height: 100vh;
   width: 70%;
   margin: 0 auto;
 `
 
-const AppHeader = AppSection.extend`
+const AppHeader = styled(AppSection)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,7 +252,6 @@ export class App extends React.Component {
                     <MenuItem color="red" onClick={this.navigateTo('appHeader')}>Home</MenuItem>
                     <MenuItem color="cornsilk" onClick={this.navigateTo('examples')}>Examples</MenuItem>
                     <MenuItem color="green" onClick={this.navigateTo('demo')}>Demo</MenuItem>
-                    <MenuItem color="green" onClick={this.navigateTo('docs')}>Documentation</MenuItem>
                 </Menu>
                 <AppHeader className="appHeader">
                     <AppTitle>React-Basic-Scroll</AppTitle>
@@ -260,6 +260,11 @@ export class App extends React.Component {
                     <pre className="language-javascript">
                         <code>
                             yarn add react-basic-scroll
+                        </code>
+                    </pre>
+                    <pre className="language-javascript">
+                        <code>
+                            npm install react-basic-scroll
                         </code>
                     </pre>
                 </AppHeader>
@@ -301,54 +306,7 @@ export class App extends React.Component {
                         </ReactBasicScroll>
                     </AppDemoContainer>
                 </AppSection>
-                <AppSection className="docs">
-                    <AppSubTitle>Documentation:</AppSubTitle>
-                </AppSection>
             </div>
         );
-        {/*<AppStyled>*/
-        }
-        {/*<DatGui data={config} onUpdate={this.updateConfig} style={{left: 0, right: 'auto', fontSize: '18px'}}>*/
-        }
-        {/*<DatFolder title="Props">*/
-        }
-        {/*<DatBoolean path='direct' label='Direct?'/>*/
-        }
-        {/*<DatSelect path='from' options={options}></DatSelect>*/
-        }
-        {/*<DatSelect path='to' options={options}></DatSelect>*/
-        }
-        {/*</DatFolder>*/
-        }
-        {/*<DatFolder title="Actions">*/
-        }
-        {/*{*/
-        }
-        {/*stopped ? <DatButton onClick={this.resume} label="Resume"/> :*/
-        }
-        {/*<DatButton onClick={this.stop} label="Stop"/>*/
-        }
-        {/*}*/
-        }
-        {/*<DatButton onClick={this.update} label="Update"/>*/
-        }
-        {/*</DatFolder>*/
-        }
-        {/*<DatButton onClick={this.restart} label="Restart"/>*/
-        }
-        {/*</DatGui>*/
-        }
-        {/*{*/
-        }
-        {/*show ? <ReactBasicScroll config={this.state.config} ref={this.componentRef}>*/
-        }
-        {/*<AppDemoElement/>*/
-        }
-        {/*</ReactBasicScroll> : <Loader />*/
-        }
-        {/*}*/
-        }
-        {/*</AppStyled>)*/
-        }
     }
 }

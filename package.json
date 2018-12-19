@@ -1,13 +1,14 @@
 {
   "name": "react-basic-scroll",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "React wrapper component for basicScroll",
   "main": "dist/index.js",
   "homepage": "https://github.com/liorbd/react-basic-scroll",
   "keywords": [
     "parallax",
     "scroll",
-    "scrolling"
+    "scrolling",
+    "react"
   ],
   "license": "MIT",
   "scripts": {
@@ -16,10 +17,11 @@
     "dev": "webpack -w",
     "build": "webpack",
     "playground": "webpack-dev-server --config playground/webpack.config.js --hot --inline",
-    "playground-release": "webpack --config playground/webpack.config.js --inline && node playground/publish.js"
+    "playground-release": "webpack --config playground/webpack.config.js --inline && node playground/publish.js",
+    "lint": "eslint src"
   },
   "dependencies": {
-    "basicscroll": "^2.1.1",
+    "basicscroll": "^3.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
@@ -28,6 +30,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.2",
     "babel-loader": "^7.1.5",
     "babel-plugin-prismjs": "^1.0.2",
@@ -37,10 +40,19 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.3.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.5.0",
@@ -49,7 +61,7 @@
     "react-dat-gui": "^1.0.2",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.22.1",
-    "styled-components": "^3.4.2",
+    "styled-components": "^4.1.3",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",

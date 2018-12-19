@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as basicScroll from 'basicscroll'
+import * as basicScroll from 'basicscroll';
 import PropTypes from 'prop-types';
 
 const ReactBasicScrollConfig = {
@@ -39,14 +39,16 @@ export class ReactBasicScroll extends React.Component {
         }
     };
 
+    elementRef = React.createRef();
+
     constructor(props) {
         super(props);
     };
 
     componentDidMount() {
         const config = this.props.config;
-            this.basicScrollInstance = basicScroll.create({
-            elem: this.elementRef,
+        this.basicScrollInstance = basicScroll.create({
+            elem: this.elementRef.current,
             ...config
         });
         this.basicScrollInstanceFn('start');
@@ -54,21 +56,17 @@ export class ReactBasicScroll extends React.Component {
 
     render() {
         const {children} = this.props;
-        return React.cloneElement(children, {ref: this.setInstanceRef});
+        return React.cloneElement(children, {ref: this.elementRef});
     };
 
     componentWillUnmount() {
         this.basicScrollInstanceFn('destroy');
     };
 
-    basicScrollInstanceFn(fn){
+    basicScrollInstanceFn(fn) {
         if (this.basicScrollInstance && typeof (this.basicScrollInstance[fn]) == 'function') {
             return this.basicScrollInstance[fn].call(null);
         }
-    };
-
-    setInstanceRef = (ref) => {
-        this.elementRef = ref;
     };
 
     // Instance API
