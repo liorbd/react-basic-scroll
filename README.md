@@ -7,6 +7,9 @@ A ReactJS components for basicScroll
 ```
 yarn add react-basic-scroll
 ```
+```
+npm i react-basic-scroll
+```
 
 ## Basic Usage
 ```js
