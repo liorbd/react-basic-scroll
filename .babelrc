@@ -1,9 +1,34 @@
 {
-  "presets": ["env", "react"],
-  "plugins": ["transform-object-rest-spread", "transform-class-properties", "transform-regenerator", ["prismjs", {
-    "languages": ["javascript", "css", "markup"],
-    "plugins": ["line-numbers"],
-    "theme": "tomorrow",
-    "css": true
-  }]]
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "debug": false,
+        "targets": {
+          "browsers": [
+            "last 3 versions"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    [
+      "prismjs",
+      {
+        "languages": [
+          "javascript",
+          "css",
+          "markup"
+        ],
+        "plugins": [
+          "line-numbers"
+        ],
+        "theme": "tomorrow",
+        "css": true
+      }
+    ]
+  ]
 }

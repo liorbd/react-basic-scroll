@@ -11,10 +11,7 @@ const ReactBasicScrollConfig = {
         PropTypes.string,
         PropTypes.number
     ]).isRequired,
-    direct: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.instanceOf(Element)
-    ]),
+    direct: PropTypes.any,
     track: PropTypes.bool,
     inside: PropTypes.func,
     outside: PropTypes.func,

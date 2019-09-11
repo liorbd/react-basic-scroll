@@ -1,5 +1,4 @@
 const path = require('path');
-const wne = require('webpack-node-externals');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,9 +8,17 @@ module.exports = {
         filename: 'index.js',
         library: 'ReactBasicScroll',
         libraryTarget: 'umd',
+        globalObject: 'this'
     },
     mode: 'production',
-    externals: [wne()],
+    externals: {
+        'react': {
+            root: 'React',
+            commonjs2: 'react',
+            commonjs: 'react',
+            amd: 'react'
+        }
+    },
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
