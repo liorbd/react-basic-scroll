@@ -7,9 +7,9 @@ jobs:
     - stage: npm release
       if: tag IS present
       script:
-        - yarn lint
-        - yarn build
-        - yarn test
+        - npm run lint
+        - npm run build
+        - npm run test
       deploy:
         provider: npm
         email: $NPM_EMAIL
